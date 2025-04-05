@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "app.js", "use": "@vercel/node" },
+      { "src": "public/**", "use": "@vercel/static" }
+    ],
+   "routes": [
+  { "src": "/callback", "dest": "app.js" },
+  { "src": "/api/(.*)", "dest": "app.js" },
+  { "src": "/(.*)", "dest": "/public/index.html" }
+]
+  }
+  
